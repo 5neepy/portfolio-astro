@@ -1,0 +1,36 @@
+---
+import { Application } from '../../../public/clients-js/runtime.js';
+---
+
+<style>
+      canvas {
+        display: block;
+      }
+      
+      .width-cont {
+        position: relative;
+        max-width: 1000px;
+        max-height: 1000px;
+        margin: auto;
+      }
+      .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+</style>
+<div class="width-cont">
+    <canvas id="canvas3d"></canvas>
+    <script type="module">
+        {
+            const canvas = document.getElementById('canvas3d');
+            const app = new Application(canvas);
+            app.load('../../../public/clients-js/scene.splinecode');
+        }
+    </script>
+    <div class="layer"></div>
+</div>
